@@ -1,0 +1,64 @@
+/*utils*/
+body {
+  font-family: Arial, Roboto, "Droid Sans", "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+  color: #333;
+  font-size: 18px;
+  background: #f8f8f8;
+}
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: white;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.25);
+}
+.opa5 {
+  opacity: 0.5;
+}
+
+/*テーブルレイアウト*/
+.col-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-height: 600px;
+}
+.col-table,
+.col-table td,
+.col-table th {
+  border:1px solid #ccc;
+}
+.col-table th {
+  background: #61c5bb;
+  text-align: center;
+  color: #fff;
+  font-size: 18px;
+}
+.col-table td {
+  padding: 0px;
+  font-size: 14px;
+  vertical-align: top;
+}
+
+/*見出し*/
+.calh {
+  font-size: 20px;
+}
+
+/*曜日の色*/
+.col-table .sun {
+  color: tomato;
+}
+.col-table .sat {
+  color: dodgerblue;
+}
+
+/*ページャー*/
+.lpager, .rpager {
+  color: tomato;
+  cursor: pointer;
+}
+.pager-box {
+  width: 300px;
+  height: 30px;
+  margin: 10px auto 0;
+  text-align: center;
+}
