@@ -19,6 +19,8 @@
     <table class="col-table">
     </table>
 
+    <button id="plan-btn">予定挿入（テスト用）</button>
+
   </div><!-- /container -->
 
   <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
@@ -42,49 +44,54 @@
   // main関数
   $(function (){
     // 現在の年と月を取得(戻り値はオブジェクト型)
-    var ym = getYearMonth( 0 );
+    var ym = getYearMonth(0);
     // カレンダーテーブルの生成
-    createCal( ym.y, ym.m );
+    createCal(ym.y, ym.m);
 
     // ページャークリック時の処理
-    $(".lpager").click(function () {
-      ym = getYearMonth( -1 );
+    $(".lpager").click(function() {
+      ym = getYearMonth(-1);
       createCal( ym.y, ym.m );
     });
-    $(".rpager").click(function () {
-      ym = getYearMonth( 1 );
+    $(".rpager").click(function() {
+      ym = getYearMonth(1);
       createCal( ym.y, ym.m );
+    });
+    // テスト用の予定追加ボタン
+    $("#plan-btn").click(function() {
+      $("tr:first-child td:nth-child(3) .inner-date").append('<p class="plan-red">佐々木三郎様</p>');
+      $("tr:last-child td:nth-child(2) .inner-date").append('<p class="plan-blue">田中信二様</p>');
     });
   });
 
   // 取得した年と月を使ってカレンダーテーブルを作成
-  function createCal( y, m )
+  function createCal(y, m)
   {
     // tableの要素を空に
-    $("table").empty();
+    $("table.col-table").empty();
 
     // カレンダーの見出しを表示
-    $(".calh").text( getCalHead( y, m ) );
+    $(".calh").text(getCalHead(y, m));
 
     // カレンダー生成で使うデータの前処理
-    var table = prepareCal( y, m );
+    var table = prepareCal(y, m);
 
     // tableにtheadとtrをappend
-    $("table").append("<thead><tr></tr></thead>");
+    $("table.col-table").append("<thead><tr></tr></thead>");
     // 曜日をテーブルに出力
     $.each(weekTbl, function(i, w){
       $("thead tr").append("<th>" + w + "</th>");
-      if( i == 0 ) $("th").addClass("sun");
+      if (i == 0) $("th").addClass("sun");
     });
 
     // tableにtbodyをappend
-    $("table").append("<tbody></tbody>");
+    $("table.col-table").append("<tbody></tbody>");
     // 日付をテーブルに出力
     $.each(table, function(i, d){
       if( i == 0 || i % 7 == 0 ){
         $("tbody").append("<tr></tr>");
       }
-      $("tbody tr:last").append("<td>" + d + "</td>");
+      $("tbody tr:last").append('<td><span class="inner-date">' + d + "</span></td>");
     });
 
     addColor();
