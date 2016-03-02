@@ -89,9 +89,9 @@
     // 日付をテーブルに出力
     $.each(table, function(i, d){
       if( i == 0 || i % 7 == 0 ){
-        $("tbody").append("<tr></tr>");
+        $("table.col-table tbody").append("<tr></tr>");
       }
-      $("tbody tr:last").append('<td><span class="inner-date">' + d + "</span></td>");
+      $("table.col-table tbody tr:last").append('<td><span class="inner-date">' + d + "</span></td>");
     });
 
     addColor();
@@ -206,20 +206,20 @@
   function addColor()
   {
     // 日曜を赤に
-    $("tr th:first").addClass("sun");
-    $("tr td:first-child").addClass("sun");
+    $("table.col-table tr th:first").addClass("sun");
+    $("table.col-table tr td:first-child").addClass("sun");
     // 土曜を青に
-    $("tr th:last").addClass("sat");
-    $("tr td:last-child").addClass("sat");
+    $("table.col-table tr th:last").addClass("sat");
+    $("table.col-table tr td:last-child").addClass("sat");
   }
 
   // 当月以外の日付を半透明にする
   function addOpacity()
   {
     // 先月の日付の透過処理
-    $("tbody tr:first td:lt(" + week + ")").addClass("opa5");
+    $("table.col-table tbody tr:first td:lt(" + week + ")").addClass("opa5");
     // 来月の日付の透過処理
-    $("tbody tr:last td").each(function(){
+    $("table.col-table tbody tr:last td").each(function(){
       var p = $(this).text();
       if (Number(p) < 7) {
         $(this).addClass("opa5");
