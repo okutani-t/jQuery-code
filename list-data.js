@@ -42,6 +42,12 @@ var list = [
     ]
   },
   {
+    "dir_name": "fluidbox",
+    "files": [
+      "index.html",
+    ]
+  },
+  {
     "dir_name": "form-move+",
     "files": [
       "index.html"
