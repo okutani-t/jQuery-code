@@ -26,6 +26,12 @@ var list = [
     ]
   },
   {
+    "dir_name": "colorbox",
+    "files": [
+      "index.html"
+    ]
+  },
+  {
     "dir_name": "double-datepicker",
     "files": [
       "index.html",
