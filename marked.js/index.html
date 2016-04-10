@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>marked.js test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <style>
+     pre code {
+       line-height: 40px;
+     }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>marked.jsのテスト</h1>
+      <div class="row">
+        <div class="col-xs-6">
+          <textarea id="editor" class="form-control" rows="300"></textarea>
+        </div>
+        <div class="col-xs-6">
+          <pre><code id="result"></code></pre>
+        </div>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.5/marked.min.js"></script>
+    <script>
+     $(function() {
+       marked.setOptions({
+         langPrefix: ''
+       });
+
+       $('#editor').keyup(function() {
+         var src = $(this).val();
+
+         var html = marked(src);
+
+         // idを取り除く
+         html = html.replace(/ id=\".*\"/g,'');
+
+         $('#result').text(html);
+
+         // ハイライト
+         $('pre code').each(function(i, block) {
+           hljs.highlightBlock(block);
+         });
+       });
+     });
+    </script>
+  </body>
+</html>
