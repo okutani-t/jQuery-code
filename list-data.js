@@ -72,6 +72,13 @@ var list = [
     ]
   },
   {
+    "dir_name": "marked.js",
+    "files": [
+      "index.html",
+      "tohtml.html",
+    ]
+  },
+  {
     "dir_name": "masonry",
     "files": [
       "index.html"
