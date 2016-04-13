@@ -9,7 +9,8 @@ var list = [
     "dir_name": "ajax",
     "files": [
       "start-ajax/get.html",
-      "start-ajax/index.html"
+      "start-ajax/index.html",
+      "blackout.html"
     ]
   },
   {
