@@ -92,6 +92,12 @@ var list = [
     ]
   },
   {
+    "dir_name": "slick",
+    "files": [
+      "index.html"
+    ]
+  },
+  {
     "dir_name": "start-jquery",
     "files": [
       "colorbox-test/index.html",
