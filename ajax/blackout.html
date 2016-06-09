@@ -36,12 +36,15 @@
           contentType: 'application/jsonp',
           dataType: 'jsonp',
           timeout:1000,
+          // 本当は新しいdone使う
           success: function(data) {
             console.log("ok");
           },
+          // 本当は新しいfail使う
           error: function(data) {
             console.log("ng");
           },
+          // 本当は新しいalways使う
           complete: function(data) {
             $('#blackout').fadeTo(50, 0, function(){
               $('#blackout').hide();
