@@ -92,6 +92,12 @@ var list = [
     ]
   },
   {
+    "dir_name": "pingpong-game",
+    "files": [
+      "index.html"
+    ]
+  },
+  {
     "dir_name": "slick",
     "files": [
       "index.html"
