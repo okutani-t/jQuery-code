@@ -113,5 +113,11 @@ var list = [
       "clockpicker/index.html",
       "radio-toggle/index.html"
     ]
+  },
+  {
+    "dir_name": "svg-anime",
+    "files": [
+      "index.html"
+    ]
   }
 ]
