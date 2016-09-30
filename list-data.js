@@ -67,6 +67,12 @@ var list = [
     ]
   },
   {
+    "dir_name": "jquery-zoom",
+    "files": [
+      "index.html"
+    ]
+  },
+  {
     "dir_name": "list.js",
     "files": [
       "sample1.html"
