@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="ja">
   <head>
     <meta charset="UTF-8"/>
     <title>pjax test</title>
@@ -32,21 +32,19 @@
 
     <img src="pjax.jpg" alt="pjax test img" width="600">
 
-    <div id="pjax-container">
-      <h1>pjax test next</h1>
-      <div class="container">
-        Go to <a href="index.html" data-pjax>index page</a>.
-      </div>
+    <h1>pjax test next</h1>
+
+    <div class="container" id="pjax-container">
+      Go to <a href="index.html">index page</a>.
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.pjax/1.9.6/jquery.pjax.min.js"></script>
+    <script src="jquery.pjax.js"></script>
     <script>
-        $(function() {
-            if ($.support.pjax) {
-                $(document).pjax('a', '#pjax-container')
-            }
+        $(function(){
+            $(document).pjax('a', '#pjax-container')
         });
     </script>
+
   </body>
 </html>
