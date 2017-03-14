@@ -104,6 +104,12 @@ var list = [
     ]
   },
   {
+    "dir_name": "pjax",
+    "files": [
+      "index.html"
+    ]
+  },
+  {
     "dir_name": "slick",
     "files": [
       "index.html"
