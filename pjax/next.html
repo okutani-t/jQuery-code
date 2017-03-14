@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>pjax test</title>
+  </head>
+  <body>
+    <p>
+      <a href="https://github.com/defunkt/jquery-pjax" target="_blank">@see pjax github</a>
+    </p>
+    <code><pre>
+        .--.
+       /    \
+      ## a  a
+      (   '._)
+       |'-- |
+     _.\___/_   ___pjax___
+   ."\> \Y/|<'.  '._.-'
+  /  \ \_\/ /  '-' /
+  | --'\_/|/ |   _/
+  |___.-' |  |`'`
+    |     |  |
+    |    / './
+   /__./` | |
+      \   | |
+       \  | |
+       ;  | |
+       /  | |
+ jgs  |___\_.\_
+      `-"--'---'
+    </pre></code>
+
+    <img src="pjax.jpg" alt="pjax test img" width="600">
+
+    <div id="pjax-container">
+      <h1>pjax test next</h1>
+      <div class="container">
+        Go to <a href="index.html" data-pjax>index page</a>.
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.pjax/1.9.6/jquery.pjax.min.js"></script>
+    <script>
+        $(function() {
+            if ($.support.pjax) {
+                $(document).pjax('a', '#pjax-container')
+            }
+        });
+    </script>
+  </body>
+</html>
