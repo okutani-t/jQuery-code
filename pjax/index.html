@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8"/>
     <title>pjax test</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.pjax/1.9.6/jquery.pjax.min.js"></script>
   </head>
   <body>
     <p>
@@ -32,18 +34,30 @@
 
     <img src="pjax.jpg" alt="pjax test img" width="600">
 
-    <h1>pjax test top</h1>
-
-    <div class="container" id="pjax-container">
+    <div id="pjax-container">
+      <h1>pjax test top</h1>
       Go to <a href="next.html">next page</a>.
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <script src="jquery.pjax.js"></script>
     <script>
         $(function(){
-            $(document).pjax('a', '#pjax-container')
+          bind_pjax();
+          $(document).on('pjax:success', function() {
+            bind_pjax();
+          });
         });
+
+        function bind_pjax()
+        {
+          $('a').on('click', function(e) {
+            $.pjax.click(e, {
+              link: 'a:not([target])',
+              container: '#pjax-container',
+              fragment: '#pjax-container',
+              ajax: { timeout: 2500 },
+            });
+          });
+        }
     </script>
   </body>
 </html>
